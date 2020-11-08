@@ -1,6 +1,27 @@
+<!--
 <div class='container'>
   <div class='box'>
-    Hello, {{speak()}} ! 
+    {{speak()}}
+  </div>   
+</div>
+
+<div class='container'>
+  <div class='box'>
+      <div *ngFor='let color of colors'> 
+        {{color}}
+      </div> 
   </div>
 </div>
 
+<div class="box">
+    <div *ngFor='let fruit of fruits; let i=index'>
+        Fruit {{i}} is {{fruit}}
+     </div>
+</div>
+-->
+
+<div>
+  <div *ngFor="let car of cars">  
+   {{car.make}} {{car.model}}  with a mileage of {{car.miles}}
+  </div>
+</div>
