@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TransportationService } from './transportation.service';
 import { Car } from './car';
 
 @Component({
@@ -23,13 +24,19 @@ export class AppComponent
   subaru: Car = {make: 'Subaru', model: 'Outback', miles: 58232};
   honda: Car = {make: 'Honda', model: 'Accord', miles: 39393};
   bmw: Car = {make: 'BMW', model: 'X3', miles: 4400};
-  cars:Car[] = [this.subaru, this.honda, this.bmw];
+  //cars:Car[] = [this.subaru, this.honda, this.bmw];
 
   speak() 
   {
     //variables declared here will be method variables
     const sentence = this.prefix + this.name;
     return sentence;
+  }
+
+  cars:Car[];
+
+  constructor (private transportationService: TransportationService) {
+  this.cars = this.transportationService.getCars();
   }
 }
  
